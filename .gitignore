@@ -1,3 +1,9 @@
 build/
 CMakeFiles/
 Testing/
+CMakeCache.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+cmake_install.cmake

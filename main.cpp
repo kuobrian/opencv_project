@@ -3,7 +3,6 @@
 #include <opencv2\face.hpp>
  
 using namespace cv;
-using namespace std;
  
 void test() {
     Mat img=imread("1.png");
@@ -11,11 +10,7 @@ void test() {
     cv::waitKey();
 }
 
-
-
-int main()
-{
-    // test();
+void facedetect() {
     Mat frame;
     VideoCapture capture(1);
     CascadeClassifier face_cascade;
@@ -44,5 +39,34 @@ int main()
    
     capture.release();  
     destroyAllWindows();
+}
+
+void salt(Mat img, int n) {
+    int i, j;
+    for(int k=0; k<n; k++) {
+        i = std::rand() % img.cols;
+        j = std::rand() % img.rows;
+        
+        if (img.type() == CV_8UC1) {
+            img.at<uchar>(j, i) = 255;
+        }
+        else if (img.type() == CV_8UC3) {
+            img.at<cv::Vec3b>(j, i)[0] = 255;
+            img.at<cv::Vec3b>(j, i)[1] = 255;
+            img.at<cv::Vec3b>(j, i)[2] = 255;
+        }
+    }
+}
+
+int main()
+{
+    // test();
+    // facedetect();
+    Mat img=imread("1.png");
+    salt(img, 3000);
+    cv::imshow("image",img);
+    cv::waitKey();
+
+    
     return 0;
 }
