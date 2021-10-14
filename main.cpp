@@ -92,7 +92,7 @@ void sharpen(const cv::Mat &image, cv::Mat &result) {
     }
 }
 
-void sharpen2D(const cv::Mat image, cv::Mat result) {
+void sharpen2D(const cv::Mat &image, cv::Mat &result) {
     cv::Mat kernel(3, 3, CV_32F, cv::Scalar(0));
     kernel.at<float>(1, 1) = 5.0;
     kernel.at<float>(0, 1) = -1.0;
@@ -103,6 +103,18 @@ void sharpen2D(const cv::Mat image, cv::Mat result) {
     cv::filter2D(image, result, image.depth(), kernel);
 }
 
+void wave(const cv::Mat &image, cv::Mat &result) {
+    cv::Mat srcX(image.rows, image.cols, CV_32F);
+    cv::Mat srcY(image.rows, image.cols, CV_32F);
+
+    for (int i=0; i<image.rows; i++) {
+        for (int j=0; j<image.cols; j++) {
+            srcX.at<float>(i, j) = j;
+            srcY.at<float>(i, j) = i+5*sin(j/10.0);
+        }
+    }
+    cv::remap(image, result, srcX, srcY, cv::INTER_LINEAR);
+}
 
 int main()
 {
@@ -117,7 +129,8 @@ int main()
     result.create(img.rows, img.cols, img.type());
     colorRestore(img, result);
     // sharpen(img, result);
-    sharpen2D(img, result);
+    // sharpen2D(img, result);
+    wave(img, result);
     
     double duration = (cv::getTickCount() - start) / cv::getTickFrequency();
 
