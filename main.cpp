@@ -58,12 +58,25 @@ void salt(Mat img, int n) {
     }
 }
 
+void colorRestore(Mat img, int div=64) {
+    for(int j=0; j<img.rows; j++) {
+        uchar* data = img.ptr<uchar>(j);
+        for(int i=0; i<img.cols; i++) {
+            data[i] = data[i] / div*div + div/2;
+        }
+    }
+}
+
+
 int main()
 {
     // test();
     // facedetect();
-    Mat img=imread("1.png");
-    salt(img, 3000);
+    Mat img = imread("1.png");
+    // salt(img, 3000);
+    colorRestore(img);
+
+    
     cv::imshow("image",img);
     cv::waitKey();
 
