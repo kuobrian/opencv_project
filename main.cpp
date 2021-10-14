@@ -69,22 +69,27 @@ void colorRestore(Mat &image, Mat &result, int div=64) {
         (*it)[1] = (*it)[1]/div*div + div/2;
         (*it)[2] = (*it)[2]/div*div + div/2;
     }
+    result = image;
 
+}
 
-    // if(image.isContinuous()) {
-    //     image.reshape(1, 1);
-    // }
-    // int nc = image.cols * image.channels();
-    // int nl = image.rows;
+void sharpen(const cv::Mat &image, cv::Mat &result) {
+    result.create(image.size(), image.type());
+    int nchannels = image.channels();
+    for (int j=1; j<image.rows-1; j++) {
+        const uchar* prev = image.ptr<const uchar>(j-1);
+        const uchar* curr = image.ptr<const uchar>(j);
+        const uchar* next = image.ptr<const uchar>(j+1);
 
+        uchar* out = result.ptr<uchar>(j);
 
-    // for(int j=0; j<nl; j++) {
-    //     const uchar* data_in= image.ptr<uchar>(j);
-    //     uchar* data_out= result.ptr<uchar>(j);
-    //     for(int i=0; i<nc; i++) {
-    //         data_out[i] = data_in[i] / div*div + div/2;
-    //     }
-    // }
+        for (int i=nchannels; i<(image.cols-1) * nchannels; i++) {
+            *out ++ = cv::saturate_cast<uchar>(
+                5*curr[i] - curr[i-nchannels] - curr[i+nchannels] - prev[i] - next[i]); 
+        }
+        
+        
+    }
 }
 
 
@@ -92,15 +97,22 @@ int main()
 {
     // test();
     // facedetect();
-    Mat img = imread("1.png");
+
+    const int64 start = cv::getTickCount();
+
+    Mat img = imread("2.jpg");
     // salt(img, 3000);
     Mat result;
     result.create(img.rows, img.cols, img.type());
     colorRestore(img, result);
+    // sharpen(img, result);
+    
+    double duration = (cv::getTickCount() - start) / cv::getTickFrequency();
+
+    std::cout << "Time: " << duration << std::endl;
     
     
-    
-    cv::imshow("image",img);
+    cv::imshow("image", result);
     cv::waitKey();
 
     
