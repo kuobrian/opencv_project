@@ -58,22 +58,33 @@ void salt(Mat img, int n) {
     }
 }
 
-void colorRestore(const Mat &image, Mat &result, int div=64) {
+void colorRestore(Mat &image, Mat &result, int div=64) {
     
-    if(image.isContinuous()) {
-        image.reshape(1, 1);
-    }
-    int nc = image.cols * image.channels();
-    int nl = image.rows;
+    Mat_ <cv::Vec3b>::iterator it = image.begin<cv::Vec3b>();
+    Mat_ <cv::Vec3b>::iterator itend = image.end<cv::Vec3b>();
 
 
-    for(int j=0; j<nl; j++) {
-        const uchar* data_in= image.ptr<uchar>(j);
-        uchar* data_out= result.ptr<uchar>(j);
-        for(int i=0; i<nc; i++) {
-            data_out[i] = data_in[i] / div*div + div/2;
-        }
+    for ( ; it!=itend; ++it) {
+        (*it)[0] = (*it)[0]/div*div + div/2;
+        (*it)[1] = (*it)[1]/div*div + div/2;
+        (*it)[2] = (*it)[2]/div*div + div/2;
     }
+
+
+    // if(image.isContinuous()) {
+    //     image.reshape(1, 1);
+    // }
+    // int nc = image.cols * image.channels();
+    // int nl = image.rows;
+
+
+    // for(int j=0; j<nl; j++) {
+    //     const uchar* data_in= image.ptr<uchar>(j);
+    //     uchar* data_out= result.ptr<uchar>(j);
+    //     for(int i=0; i<nc; i++) {
+    //         data_out[i] = data_in[i] / div*div + div/2;
+    //     }
+    // }
 }
 
 
@@ -83,11 +94,13 @@ int main()
     // facedetect();
     Mat img = imread("1.png");
     // salt(img, 3000);
-    cv::Mat result;
+    Mat result;
     result.create(img.rows, img.cols, img.type());
     colorRestore(img, result);
     
-    cv::imshow("image",result);
+    
+    
+    cv::imshow("image",img);
     cv::waitKey();
 
     
