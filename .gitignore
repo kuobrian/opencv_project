@@ -7,3 +7,5 @@ CPackSourceConfig.cmake
 CTestTestfile.cmake
 DartConfiguration.tcl
 cmake_install.cmake
+*.exe
+.vscode/

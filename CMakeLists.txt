@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(example VERSION 0.1.0)
+project(opencv_project VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
@@ -15,8 +15,22 @@ message( STATUS "    libraries: ${OpenCV_LIBS}" )
 message( STATUS "    include path: ${OpenCV_INCLUDE_DIRS}" )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable(example main.cpp)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+set(ch2 "ch2")
+set(ch3 "ch3")
+
+
+add_executable(${ch2} main.cpp)
+# add executable
+add_executable( colorDetection  colorDetection.cpp colordetector.cpp)
+# add_executable( extractObject extractObject.cpp)
+# add_executable( huesaturation huesaturation.cpp)
+
+
+# link libraries
+target_link_libraries(${ch2} ${OpenCV_LIBS})
+target_link_libraries( colorDetection  ${OpenCV_LIBS})
+# target_link_libraries( extractObject ${OpenCV_LIBS})
+# target_link_libraries( huesaturation ${OpenCV_LIBS})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

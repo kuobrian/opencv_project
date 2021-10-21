@@ -56,10 +56,10 @@ RM = C:\cmake-3.21.3-windows-x86_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\USER\Desktop\example
+CMAKE_SOURCE_DIR = C:\Users\USER\Desktop\opencv_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\USER\Desktop\example
+CMAKE_BINARY_DIR = C:\Users\USER\Desktop\opencv_project
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\USER\Desktop\example
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	C:\cmake-3.21.3-windows-x86_64\bin\cpack.exe --config ./CPackSourceConfig.cmake C:/Users/USER/Desktop/example/CPackSourceConfig.cmake
+	C:\cmake-3.21.3-windows-x86_64\bin\cpack.exe --config ./CPackSourceConfig.cmake C:/Users/USER/Desktop/opencv_project/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -116,9 +116,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\USER\Desktop\example\CMakeFiles C:\Users\USER\Desktop\example\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\USER\Desktop\opencv_project\CMakeFiles C:\Users\USER\Desktop\opencv_project\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\USER\Desktop\example\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\USER\Desktop\opencv_project\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -510,24 +510,85 @@ ContinuousCoverage/fast:
 .PHONY : ContinuousCoverage/fast
 
 #=============================================================================
-# Target rules for targets named example
+# Target rules for targets named ch2
 
 # Build rule for target.
-example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 example
-.PHONY : example
+ch2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ch2
+.PHONY : ch2
 
 # fast build rule for target.
-example/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example.dir\build.make CMakeFiles/example.dir/build
-.PHONY : example/fast
+ch2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ch2.dir\build.make CMakeFiles/ch2.dir/build
+.PHONY : ch2/fast
+
+#=============================================================================
+# Target rules for targets named colorDetection
+
+# Build rule for target.
+colorDetection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 colorDetection
+.PHONY : colorDetection
+
+# fast build rule for target.
+colorDetection/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/build
+.PHONY : colorDetection/fast
+
+colorDetection.obj: colorDetection.cpp.obj
+.PHONY : colorDetection.obj
+
+# target to build an object file
+colorDetection.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colorDetection.cpp.obj
+.PHONY : colorDetection.cpp.obj
+
+colorDetection.i: colorDetection.cpp.i
+.PHONY : colorDetection.i
+
+# target to preprocess a source file
+colorDetection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colorDetection.cpp.i
+.PHONY : colorDetection.cpp.i
+
+colorDetection.s: colorDetection.cpp.s
+.PHONY : colorDetection.s
+
+# target to generate assembly for a file
+colorDetection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colorDetection.cpp.s
+.PHONY : colorDetection.cpp.s
+
+colordetector.obj: colordetector.cpp.obj
+.PHONY : colordetector.obj
+
+# target to build an object file
+colordetector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colordetector.cpp.obj
+.PHONY : colordetector.cpp.obj
+
+colordetector.i: colordetector.cpp.i
+.PHONY : colordetector.i
+
+# target to preprocess a source file
+colordetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colordetector.cpp.i
+.PHONY : colordetector.cpp.i
+
+colordetector.s: colordetector.cpp.s
+.PHONY : colordetector.s
+
+# target to generate assembly for a file
+colordetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colordetector.cpp.s
+.PHONY : colordetector.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example.dir\build.make CMakeFiles/example.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ch2.dir\build.make CMakeFiles/ch2.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -535,7 +596,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example.dir\build.make CMakeFiles/example.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ch2.dir\build.make CMakeFiles/ch2.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -543,7 +604,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example.dir\build.make CMakeFiles/example.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ch2.dir\build.make CMakeFiles/ch2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -585,7 +646,14 @@ help:
 	@echo ... NightlySubmit
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
-	@echo ... example
+	@echo ... ch2
+	@echo ... colorDetection
+	@echo ... colorDetection.obj
+	@echo ... colorDetection.i
+	@echo ... colorDetection.s
+	@echo ... colordetector.obj
+	@echo ... colordetector.i
+	@echo ... colordetector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
