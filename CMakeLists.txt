@@ -22,15 +22,16 @@ set(ch3 "ch3")
 add_executable(${ch2} main.cpp)
 # add executable
 add_executable( colorDetection  colorDetection.cpp colordetector.cpp)
-# add_executable( extractObject extractObject.cpp)
-# add_executable( huesaturation huesaturation.cpp)
-
+add_executable( huesaturation huesaturation.cpp)
+add_executable( histogram histograms.cpp)
+add_executable( contentFinder contentFinder.cpp)
 
 # link libraries
 target_link_libraries(${ch2} ${OpenCV_LIBS})
 target_link_libraries( colorDetection  ${OpenCV_LIBS})
-# target_link_libraries( extractObject ${OpenCV_LIBS})
-# target_link_libraries( huesaturation ${OpenCV_LIBS})
+target_link_libraries( huesaturation ${OpenCV_LIBS})
+target_link_libraries( histogram ${OpenCV_LIBS})
+target_link_libraries( contentFinder ${OpenCV_LIBS})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

@@ -535,6 +535,45 @@ colorDetection/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/build
 .PHONY : colorDetection/fast
 
+#=============================================================================
+# Target rules for targets named huesaturation
+
+# Build rule for target.
+huesaturation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 huesaturation
+.PHONY : huesaturation
+
+# fast build rule for target.
+huesaturation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huesaturation.dir\build.make CMakeFiles/huesaturation.dir/build
+.PHONY : huesaturation/fast
+
+#=============================================================================
+# Target rules for targets named histogram
+
+# Build rule for target.
+histogram: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 histogram
+.PHONY : histogram
+
+# fast build rule for target.
+histogram/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\histogram.dir\build.make CMakeFiles/histogram.dir/build
+.PHONY : histogram/fast
+
+#=============================================================================
+# Target rules for targets named contentFinder
+
+# Build rule for target.
+contentFinder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 contentFinder
+.PHONY : contentFinder
+
+# fast build rule for target.
+contentFinder/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/build
+.PHONY : contentFinder/fast
+
 colorDetection.obj: colorDetection.cpp.obj
 .PHONY : colorDetection.obj
 
@@ -582,6 +621,78 @@ colordetector.s: colordetector.cpp.s
 colordetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\colorDetection.dir\build.make CMakeFiles/colorDetection.dir/colordetector.cpp.s
 .PHONY : colordetector.cpp.s
+
+contentFinder.obj: contentFinder.cpp.obj
+.PHONY : contentFinder.obj
+
+# target to build an object file
+contentFinder.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/contentFinder.cpp.obj
+.PHONY : contentFinder.cpp.obj
+
+contentFinder.i: contentFinder.cpp.i
+.PHONY : contentFinder.i
+
+# target to preprocess a source file
+contentFinder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/contentFinder.cpp.i
+.PHONY : contentFinder.cpp.i
+
+contentFinder.s: contentFinder.cpp.s
+.PHONY : contentFinder.s
+
+# target to generate assembly for a file
+contentFinder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/contentFinder.cpp.s
+.PHONY : contentFinder.cpp.s
+
+histograms.obj: histograms.cpp.obj
+.PHONY : histograms.obj
+
+# target to build an object file
+histograms.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\histogram.dir\build.make CMakeFiles/histogram.dir/histograms.cpp.obj
+.PHONY : histograms.cpp.obj
+
+histograms.i: histograms.cpp.i
+.PHONY : histograms.i
+
+# target to preprocess a source file
+histograms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\histogram.dir\build.make CMakeFiles/histogram.dir/histograms.cpp.i
+.PHONY : histograms.cpp.i
+
+histograms.s: histograms.cpp.s
+.PHONY : histograms.s
+
+# target to generate assembly for a file
+histograms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\histogram.dir\build.make CMakeFiles/histogram.dir/histograms.cpp.s
+.PHONY : histograms.cpp.s
+
+huesaturation.obj: huesaturation.cpp.obj
+.PHONY : huesaturation.obj
+
+# target to build an object file
+huesaturation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huesaturation.dir\build.make CMakeFiles/huesaturation.dir/huesaturation.cpp.obj
+.PHONY : huesaturation.cpp.obj
+
+huesaturation.i: huesaturation.cpp.i
+.PHONY : huesaturation.i
+
+# target to preprocess a source file
+huesaturation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huesaturation.dir\build.make CMakeFiles/huesaturation.dir/huesaturation.cpp.i
+.PHONY : huesaturation.cpp.i
+
+huesaturation.s: huesaturation.cpp.s
+.PHONY : huesaturation.s
+
+# target to generate assembly for a file
+huesaturation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huesaturation.dir\build.make CMakeFiles/huesaturation.dir/huesaturation.cpp.s
+.PHONY : huesaturation.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -648,12 +759,24 @@ help:
 	@echo ... NightlyUpdate
 	@echo ... ch2
 	@echo ... colorDetection
+	@echo ... contentFinder
+	@echo ... histogram
+	@echo ... huesaturation
 	@echo ... colorDetection.obj
 	@echo ... colorDetection.i
 	@echo ... colorDetection.s
 	@echo ... colordetector.obj
 	@echo ... colordetector.i
 	@echo ... colordetector.s
+	@echo ... contentFinder.obj
+	@echo ... contentFinder.i
+	@echo ... contentFinder.s
+	@echo ... histograms.obj
+	@echo ... histograms.i
+	@echo ... histograms.s
+	@echo ... huesaturation.obj
+	@echo ... huesaturation.i
+	@echo ... huesaturation.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
