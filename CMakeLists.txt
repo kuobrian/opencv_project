@@ -25,6 +25,8 @@ add_executable( colorDetection  colorDetection.cpp colordetector.cpp)
 add_executable( huesaturation huesaturation.cpp)
 add_executable( histogram histograms.cpp)
 add_executable( contentFinder contentFinder.cpp)
+add_executable( finder finder.cpp)
+add_executable( retrieve retrieve.cpp)
 
 # link libraries
 target_link_libraries(${ch2} ${OpenCV_LIBS})
@@ -32,6 +34,8 @@ target_link_libraries( colorDetection  ${OpenCV_LIBS})
 target_link_libraries( huesaturation ${OpenCV_LIBS})
 target_link_libraries( histogram ${OpenCV_LIBS})
 target_link_libraries( contentFinder ${OpenCV_LIBS})
+target_link_libraries( finder ${OpenCV_LIBS})
+target_link_libraries( retrieve ${OpenCV_LIBS})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

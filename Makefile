@@ -574,6 +574,32 @@ contentFinder/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/build
 .PHONY : contentFinder/fast
 
+#=============================================================================
+# Target rules for targets named finder
+
+# Build rule for target.
+finder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 finder
+.PHONY : finder
+
+# fast build rule for target.
+finder/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\finder.dir\build.make CMakeFiles/finder.dir/build
+.PHONY : finder/fast
+
+#=============================================================================
+# Target rules for targets named retrieve
+
+# Build rule for target.
+retrieve: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 retrieve
+.PHONY : retrieve
+
+# fast build rule for target.
+retrieve/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\retrieve.dir\build.make CMakeFiles/retrieve.dir/build
+.PHONY : retrieve/fast
+
 colorDetection.obj: colorDetection.cpp.obj
 .PHONY : colorDetection.obj
 
@@ -645,6 +671,30 @@ contentFinder.s: contentFinder.cpp.s
 contentFinder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\contentFinder.dir\build.make CMakeFiles/contentFinder.dir/contentFinder.cpp.s
 .PHONY : contentFinder.cpp.s
+
+finder.obj: finder.cpp.obj
+.PHONY : finder.obj
+
+# target to build an object file
+finder.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\finder.dir\build.make CMakeFiles/finder.dir/finder.cpp.obj
+.PHONY : finder.cpp.obj
+
+finder.i: finder.cpp.i
+.PHONY : finder.i
+
+# target to preprocess a source file
+finder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\finder.dir\build.make CMakeFiles/finder.dir/finder.cpp.i
+.PHONY : finder.cpp.i
+
+finder.s: finder.cpp.s
+.PHONY : finder.s
+
+# target to generate assembly for a file
+finder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\finder.dir\build.make CMakeFiles/finder.dir/finder.cpp.s
+.PHONY : finder.cpp.s
 
 histograms.obj: histograms.cpp.obj
 .PHONY : histograms.obj
@@ -718,6 +768,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ch2.dir\build.make CMakeFiles/ch2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+retrieve.obj: retrieve.cpp.obj
+.PHONY : retrieve.obj
+
+# target to build an object file
+retrieve.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\retrieve.dir\build.make CMakeFiles/retrieve.dir/retrieve.cpp.obj
+.PHONY : retrieve.cpp.obj
+
+retrieve.i: retrieve.cpp.i
+.PHONY : retrieve.i
+
+# target to preprocess a source file
+retrieve.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\retrieve.dir\build.make CMakeFiles/retrieve.dir/retrieve.cpp.i
+.PHONY : retrieve.cpp.i
+
+retrieve.s: retrieve.cpp.s
+.PHONY : retrieve.s
+
+# target to generate assembly for a file
+retrieve.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\retrieve.dir\build.make CMakeFiles/retrieve.dir/retrieve.cpp.s
+.PHONY : retrieve.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -760,8 +834,10 @@ help:
 	@echo ... ch2
 	@echo ... colorDetection
 	@echo ... contentFinder
+	@echo ... finder
 	@echo ... histogram
 	@echo ... huesaturation
+	@echo ... retrieve
 	@echo ... colorDetection.obj
 	@echo ... colorDetection.i
 	@echo ... colorDetection.s
@@ -771,6 +847,9 @@ help:
 	@echo ... contentFinder.obj
 	@echo ... contentFinder.i
 	@echo ... contentFinder.s
+	@echo ... finder.obj
+	@echo ... finder.i
+	@echo ... finder.s
 	@echo ... histograms.obj
 	@echo ... histograms.i
 	@echo ... histograms.s
@@ -780,6 +859,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... retrieve.obj
+	@echo ... retrieve.i
+	@echo ... retrieve.s
 .PHONY : help
 
 
